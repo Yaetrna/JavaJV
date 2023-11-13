@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Taschenrechner {
+public class Calculator {
     public static void main(String[] args) {
         char operator;
         do {
