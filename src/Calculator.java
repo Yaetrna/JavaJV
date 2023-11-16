@@ -116,14 +116,4 @@ public class Calculator {
         }
         return product;
     }
-
-    static int fibonacciRecursive(int n) {
-        if (n < 1) {
-            return 0;
-        } else if (n < 2) {
-            return 1;
-        } else {
-            return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
-        }
-    }
 }
