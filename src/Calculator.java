@@ -59,7 +59,7 @@ public class Calculator {
                 case 'F' -> {
                     System.out.println("Enter Index: ");
                     int index = Integer.parseInt(getInput());
-                    System.out.println("Fibonacci of Index[" + index + "]: " + fibonacciIterative(index));
+                    System.out.println("Fibonacci of Index[" + index + "]: " + fibonacci(index));
                 }
                 case 'A' -> {
                     System.out.println("Enter Index: ");
@@ -98,22 +98,45 @@ public class Calculator {
         return Math.pow(base, exponent);
     }
 
-    static int fibonacciIterative(int n) {
-        int a = 0;
-        int b = 1;
+    static int fibonacci(int n) {
+        int F_0 = 0;
+        int F_1 = 1;
         for (int i = 0; i < n; i++) {
-            int temp = a;
-            a = b;
-            b = temp + a;
+            int temp = F_0;
+            F_0 = F_1;
+            F_1 = temp + F_0;
+        }
+        return F_0;
+    }
+
+    static int slowbonacci(int n) {
+        if (n < 1) {
+            return 0;
+        } else if (n < 3) {
+            return 1;
+        } else {
+            return slowbonacci(n - 1) + slowbonacci(n - 2);
+        }
+    }
+
+    static long factorial(int n) {
+        long a = 1;
+        for (int i = 2; i <= n; i++) {
+            a *= i;
         }
         return a;
     }
 
-    static long factorial(int n) {
-        long product = 1;
-        for (int i = 2; i <= n; i++) {
-            product *= i;
+    static int slower(int base, int exponent) {
+        if (exponent < 0) {
+            System.out.println("Not defined for negative Exponents.");
+            return -1;
+        } else if (exponent < 1) {
+            return 1;
+        } else if (exponent < 2) {
+            return base;
+        } else {
+            return base * slower(base, exponent - 1);
         }
-        return product;
     }
 }
