@@ -1,8 +1,6 @@
-package calculators;
-
 import java.util.Scanner;
 
-public class BestCalculator {
+public class ConciseCalculator {
     public static void main(String[] args) {
         System.out.println("Enter an Integer: ");
         int numOne = Integer.parseInt(getInput());

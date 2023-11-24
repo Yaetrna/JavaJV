@@ -1,8 +1,6 @@
-package calculators;
-
 import java.util.Scanner;
 
-public class Calculator {
+public class AdvancedCalculator {
     public static void main(String[] args) {
         char operator;
         do {
